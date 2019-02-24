@@ -2,7 +2,6 @@ from converter import Converter
 import sys
 from spotify_auth import fetch_permissions_request
 import spotipy
-
 username = ''
 
 playlists = {}
@@ -17,6 +16,7 @@ if __name__ == '__main__':
     client_credentials = fetch_permissions_request()
 
     sp = spotipy.Spotify(client_credentials.get_access_token())
-    playlists = sp.user_playlists(username)
-    for playlist in playlists['items']:
-        print(str(playlist) + "\n\n\n")
+    converter = Converter(username, sp)
+    converter.fetch_tracks_in_playlist()
+
+    
