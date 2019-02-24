@@ -1,10 +1,8 @@
 from utils import Utils
 import urllib.request as request
-import urllib.parse as parse
 import re
 import youtube_dl
 import sys
-import requests
 import time
 
 class Converter():
@@ -57,3 +55,5 @@ class Converter():
                     except Exception:
                         print('A track shouldn\'t be downloaded.')
                         break
+        print('\n\n\n\n Tracks Successfully downloaded. Goodbye ;)')
+        sys.exit()
